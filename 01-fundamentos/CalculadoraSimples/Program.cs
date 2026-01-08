@@ -1,58 +1,68 @@
 ﻿using System;
 
-Console.WriteLine("===Calculadora Simples===");
+bool executar = true;
 
-Console.Write("Digite o primeiro número: ");
-double numero1 = double.Parse(Console.ReadLine());
-
-Console.Write("Digite o segundo número: ");
-double numero2 = double.Parse(Console.ReadLine());
-
-Console.WriteLine();
-Console.WriteLine("Escolha a operação: ");
-Console.WriteLine("1 - Soma");
-Console.WriteLine("2- Subtração");
-Console.WriteLine("3- Multiplicação");
-Console.WriteLine("4 - Divisão");
-
-Console.Write("Opção: ");
-int opcao = int.Parse(Console.ReadLine());
-
-double resultado = 0;
-
-if (opcao == 1)
+while (executar)
 {
-    resultado = numero1 + numero2;
-}
-else if (opcao ==2)
-{
-    resultado = numero1 - numero2;
-}
+    
+    Console.WriteLine("===Calculadora Simples===");
+    Console.WriteLine("1 - Soma");
+    Console.WriteLine("2- Subtração");
+    Console.WriteLine("3- Multiplicação");
+    Console.WriteLine("4 - Divisão");
+    Console.WriteLine("0 - Sair");
 
-else if (opcao ==3)
-{
-    resultado = numero1 * numero2;
-}
-else if (opcao == 4)
-{
-    if (numero2 != 0)
+    Console.Write("Escolha uma opção: ");
+    int opcao = int.Parse(Console.ReadLine());
+
+    if (opcao == 0)
     {
-        resultado = numero1 / numero2;
+        Console.WriteLine("Encerrando o programa...");
+        break;
     }
-    else
+    
+    Console.Write("Digite o primeiro número: ");
+    double numero1 = double.Parse(Console.ReadLine());
+
+    Console.Write("Digite o segundo número: ");
+    double numero2 = double.Parse(Console.ReadLine());
+
+    double resultado = 0;
+
+    switch (opcao)
     {
-        Console.WriteLine("Erro: divisão por zero!");
+        case 1:
+            resultado = numero1 + numero2;
+            break;
+        
+        case 2:
+            resultado = numero1 - numero2;
+            break;
+        
+        case 3:
+            resultado = numero1 * numero2;
+            break;
+        case 4:
+            if (numero2 != 0)
+            {
+                resultado = numero1 / numero2;
+            }
+            else
+            {
+                Console.WriteLine("Erro: divisão por zero!");
+                continue;
+            }
+            break;
+        default:
+            Console.WriteLine("Opção inválida!");
+            continue;
+    
     }
+    
+    Console.WriteLine();
+    Console.WriteLine($"Resultado: {resultado}");
+    
 }
-else
-{
-    Console.WriteLine("Opção inválida!");
-}
-
-Console.WriteLine();
-Console.WriteLine($"Resultado: {resultado}");
-
-
 
 
 
