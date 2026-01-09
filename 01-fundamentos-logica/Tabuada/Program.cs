@@ -2,9 +2,19 @@
 using System.Reflection.Metadata;
 
 Console.WriteLine("===Tabuada Simples===");
+int numero;
+bool numeroValido;
+do
+ {
+    Console.Write("Digite um número inteiro: ");
+    numeroValido = int.TryParse(Console.ReadLine(), out numero);
 
-Console.Write("Digite um número inteiro: ");
- bool numeroValido = int.TryParse(Console.ReadLine(), out int numero);
+    if(!numeroValido) {
+        Console.WriteLine("Por favor digite um número válido");
+    }
+
+}while(!numeroValido);
+
 
 for(int i=0; i<=10; i++)
 {

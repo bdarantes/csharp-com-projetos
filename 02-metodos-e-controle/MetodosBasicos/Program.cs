@@ -2,8 +2,20 @@
 
 static double lerNumero()
 {
-    Console.Write("Digite um número: ");
-    bool numeroValido = double.TryParse(Console.ReadLine(), out double numero);
+    double numero;
+    bool numeroValido;
+
+    do 
+    {
+        Console.Write("Digite um número: ");
+        numeroValido = double.TryParse(Console.ReadLine(), out numero);
+
+        if(!numeroValido) {
+            Console.WriteLine("Por favor digite um número válido");
+        }
+        
+    } while(!numeroValido);
+    
     return numero;
 }
 

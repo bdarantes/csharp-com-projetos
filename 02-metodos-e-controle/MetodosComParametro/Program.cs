@@ -1,12 +1,29 @@
 ﻿using System;
-using System.Reflection.Metadata;
+
 
 static double LerNumero(string mensagem)
 {
-    Console.Write(mensagem);
-    bool numeroValido = double.TryParse(Console.ReadLine(), out double numero);
+    double numero;
+    bool numeroValido;
+   
+    do 
+    {
+        Console.Write(mensagem);
+        numeroValido = double.TryParse(Console.ReadLine(), out numero);
+
+        if (!numeroValido)
+        {
+            Console.WriteLine("Por favor, digite um número");
+        }
+    } while(!numeroValido);
+
     return numero;
+
+
+
 }
+
+
 Console.WriteLine("+++Soma de dois números+++");
 double a = LerNumero("Digite o primeiro número: ");
 double b = LerNumero("Digite o segundo número: ");
