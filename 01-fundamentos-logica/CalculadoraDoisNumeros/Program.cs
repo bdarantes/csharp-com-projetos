@@ -41,7 +41,7 @@ while (true)
 
     if (!n1Valido || !n2Valido)
     {
-        Console.WriteLine("Digite apenas númers válidos.");
+        Console.WriteLine("Digite apenas números válidos.");
         Console.WriteLine();
         continue;
     }
