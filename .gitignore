@@ -1,6 +1,18 @@
+# Build results
 bin/
 obj/
-.vs/
-.idea/
+
+# User-specific files
 *.user
+*.rsuser
 *.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
