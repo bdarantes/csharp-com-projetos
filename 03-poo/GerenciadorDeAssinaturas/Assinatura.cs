@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using System;
 
 public enum Categoria { Streaming, Servico, Software, Academia }
@@ -9,11 +10,14 @@ public class Assinatura {
     public Categoria Categoria { get; private set; }
     public DateTime DataVencimento { get; private set; }
 
-    public Assinatura(int id, string nome, decimal valor, Categoria categoria, DateTime vecimento)
+
+    [JsonConstructor]
+    public Assinatura(int id, string nome, decimal valor, Categoria categoria, DateTime dataVencimento)
     {
         Id = id;
         Nome = nome;
+        Valor = valor;
         Categoria = categoria;
-        DataVencimento = vecimento;
+        DataVencimento = dataVencimento;
     }
 }
