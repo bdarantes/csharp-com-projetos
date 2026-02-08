@@ -7,14 +7,14 @@ ViaCepService service = new ViaCepService();
 while (true)
 {
     Console.Write("\nDigite o CEP (ou 'sair): ");
-    string cepInput = Console.ReadLine();
+    string cepInput = Console.ReadLine() ?? "";
 
 if (string.IsNullOrWhiteSpace(cepInput) || cepInput.ToLower() == "sair")
     break;
 
 Console.WriteLine("Buscando....");
 
-var endereco = await service.BuscarEndereco(cepInput);
+Endereco? endereco = await service.BuscarEndereco(cepInput);
 
 if (endereco == null || endereco.Erro == "true")
     {

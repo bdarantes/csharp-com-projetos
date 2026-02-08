@@ -7,7 +7,7 @@ public class ViaCepService
 {
     private static readonly HttpClient _client = new HttpClient();
 
-    public async Task<Endereco> BuscarEndereco(string cep)
+    public async Task<Endereco?> BuscarEndereco(string cep)
     {
         try
         {
@@ -19,6 +19,9 @@ public class ViaCepService
             HttpResponseMessage response = await _client.GetAsync(url);
 
             response.EnsureSuccessStatusCode();
+
+            if (response.Content == null)
+                return null;
 
             string jsonString = await response.Content.ReadAsStringAsync();
 
