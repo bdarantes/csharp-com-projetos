@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Netflix",
+    "Valor": 44.90,
+    "Categoria": 0,
+    "DataVencimento": "2026-03-10T09:12:08.2008237-03:00"
+  },
+  {
+    "Id": 2,
+    "Nome": "Academia",
+    "Valor": 100.00,
+    "Categoria": 3,
+    "DataVencimento": "2026-03-10T09:12:51.8357337-03:00"
+  },
+  {
+    "Id": 3,
+    "Nome": "HBOMax",
+    "Valor": 44.90,
+    "Categoria": 0,
+    "DataVencimento": "2026-03-10T09:14:24.3954-03:00"
+  }
+]
